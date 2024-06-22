@@ -8,12 +8,13 @@ version = "0.1.0"
 edition = "2021"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
-repository = "https://git.sr.ht/~chmanie/embedded-driver-template"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/atovproject/embedded-driver-template"
 
 [dependencies]
-embedded-hal = "0.2.7"
+embedded-hal-async = "1.0"
 
 [dev-dependencies]
-embedded-hal-mock = "0.8.0"
+embedded-hal-mock = { version="0.11", features = ["eh1", "embedded-hal-async"] }
+tokio = { version = "1.38", features = ["rt", "macros"] }
+critical-section = { version = "1.1", features = ["std"] }
+
